@@ -1,0 +1,8 @@
+{
+  "id": "react-auto-complete",
+  "name": "react-auto-complete",
+  "srcdoc": "./build/index.html",
+  "fieldTypes": [
+    "Object"
+  ]
+}
