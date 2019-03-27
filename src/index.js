@@ -1,10 +1,17 @@
 import React from 'react';
+import Select from 'react-select';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { TextInput } from '@contentful/forma-36-react-components';
 import { init } from 'contentful-ui-extensions-sdk';
 import '@contentful/forma-36-react-components/dist/styles.css';
 import './index.css';
+
+const options = [
+  { value: 'chocolate', label: 'Chocolate' },
+  { value: 'strawberry', label: 'Strawberry' },
+  { value: 'vanilla', label: 'Vanilla' }
+];
 
 class App extends React.Component {
   static propTypes = {
@@ -50,13 +57,13 @@ class App extends React.Component {
   };
 
   render() {
+    const { selectedOption } = this.state.value;
+
     return (
-      <TextInput
-        width="large"
-        type="text"
-        id="my-field"
-        value={this.state.value}
+      <Select
+        value={selectedOption}
         onChange={this.onChange}
+        options={options}
       />
     );
   }
